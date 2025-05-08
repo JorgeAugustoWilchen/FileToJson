@@ -4,11 +4,13 @@
 class FromExcel
 { 
     public:
-        FromExcel(const std::string& filename);
+        FromExcel();
         ~FromExcel();
-        void extractText();
+        
+        std::string convertToJson(const std::string& filename);
     
     private:
+        void extractText(const std::string& filename);
         void extractImages();
         void extractTables();
 };

@@ -3,12 +3,13 @@
 
 class FromImage { 
     public: 
-        FromImage(const std::string& filename); 
+        FromImage(); 
         ~FromImage(); 
 
-        void extractText(); 
+        std::string convertToJson(const std::string& filename);
     
     private:
+        void extractText(); 
         void extractImages(); 
         void extractTables(); 
 };

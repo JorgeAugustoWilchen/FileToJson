@@ -1,6 +1,6 @@
-#include "pdf/frompdf.hpp"
-#include "image/fromimage.hpp"
-#include "excel/fromexcel.hpp"
+#include "frompdf.hpp"
+#include "fromimage.hpp"
+#include "fromexcel.hpp"
 
 class FileToJson
 {
@@ -10,11 +10,15 @@ class FileToJson
         std::string convert(std::string filename);
 
     private:
-        std::string filename;
-        std::string filetype;
         FromPDF *pdf;
         FromImage *image;
         FromExcel *excel;
-        void detectFileType();
-        void convertToJson();
+
+        enum FileType
+        {
+            PDF,
+            IMAGE,
+            EXCEL,
+            UNKNOWN
+        };
 };

@@ -10,12 +10,8 @@ using json = nlohmann::json;
 
 class FromPDF {
     public:
-        FromPDF(const std::string& filePath);
+        FromPDF();
         ~FromPDF();
 
-        bool convertToJson();
-
-    private:
-        std::string pdfPath;
-        std::string outputJsonPath;
+        std::string convertToJson(const std::string& filePath);
 };
